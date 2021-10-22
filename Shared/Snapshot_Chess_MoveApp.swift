@@ -2,7 +2,7 @@
 //  Snapshot_Chess_MoveApp.swift
 //  Shared
 //
-//  Created by Tom Cavalli on 10/18/21.
+//  Created by Thomas Cavalli on 10/18/21.
 //
 
 import SwiftUI
