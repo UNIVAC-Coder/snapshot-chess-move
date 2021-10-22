@@ -11,23 +11,47 @@
 		E292834A271DDF9A00D3899D /* Snapshot_Chess_MoveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2928335271DDF9800D3899D /* Snapshot_Chess_MoveApp.swift */; };
 		E292834B271DDF9A00D3899D /* Snapshot_Chess_MoveDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2928336271DDF9800D3899D /* Snapshot_Chess_MoveDocument.swift */; };
 		E292834C271DDF9A00D3899D /* Snapshot_Chess_MoveDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2928336271DDF9800D3899D /* Snapshot_Chess_MoveDocument.swift */; };
-		E292834D271DDF9A00D3899D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2928337271DDF9800D3899D /* ContentView.swift */; };
-		E292834E271DDF9A00D3899D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2928337271DDF9800D3899D /* ContentView.swift */; };
-		E292834F271DDF9A00D3899D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2928338271DDF9900D3899D /* Assets.xcassets */; };
-		E2928350271DDF9A00D3899D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2928338271DDF9900D3899D /* Assets.xcassets */; };
+		E2F8EE5C2721CF1000F6E2F0 /* ChessMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE5B2721CF1000F6E2F0 /* ChessMove.swift */; };
+		E2F8EE5D2721CF1000F6E2F0 /* ChessMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE5B2721CF1000F6E2F0 /* ChessMove.swift */; };
+		E2F8EE6427223CA600F6E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F8EE5E27223CA600F6E2F0 /* Assets.xcassets */; };
+		E2F8EE6527223CA600F6E2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F8EE5E27223CA600F6E2F0 /* Assets.xcassets */; };
+		E2F8EE6627223CA600F6E2F0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE5F27223CA600F6E2F0 /* EditView.swift */; };
+		E2F8EE6727223CA600F6E2F0 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE5F27223CA600F6E2F0 /* EditView.swift */; };
+		E2F8EE6827223CA600F6E2F0 /* SquareView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6027223CA600F6E2F0 /* SquareView1.swift */; };
+		E2F8EE6927223CA600F6E2F0 /* SquareView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6027223CA600F6E2F0 /* SquareView1.swift */; };
+		E2F8EE6A27223CA600F6E2F0 /* SquareView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6127223CA600F6E2F0 /* SquareView2.swift */; };
+		E2F8EE6B27223CA600F6E2F0 /* SquareView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6127223CA600F6E2F0 /* SquareView2.swift */; };
+		E2F8EE6C27223CA600F6E2F0 /* SquareView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6227223CA600F6E2F0 /* SquareView3.swift */; };
+		E2F8EE6D27223CA600F6E2F0 /* SquareView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6227223CA600F6E2F0 /* SquareView3.swift */; };
+		E2F8EE6E27223CA600F6E2F0 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6327223CA600F6E2F0 /* SquareView.swift */; };
+		E2F8EE6F27223CA600F6E2F0 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE6327223CA600F6E2F0 /* SquareView.swift */; };
+		E2F8EE7127223CE400F6E2F0 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE7027223CE400F6E2F0 /* BoardView.swift */; };
+		E2F8EE7227223CE400F6E2F0 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE7027223CE400F6E2F0 /* BoardView.swift */; };
+		E2F8EE742722459000F6E2F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE732722459000F6E2F0 /* ContentView.swift */; };
+		E2F8EE752722459000F6E2F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE732722459000F6E2F0 /* ContentView.swift */; };
+		E2F8EE772722491A00F6E2F0 /* SquareView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE762722491A00F6E2F0 /* SquareView4.swift */; };
+		E2F8EE782722491A00F6E2F0 /* SquareView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F8EE762722491A00F6E2F0 /* SquareView4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2928335271DDF9800D3899D /* Snapshot_Chess_MoveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot_Chess_MoveApp.swift; sourceTree = "<group>"; };
 		E2928336271DDF9800D3899D /* Snapshot_Chess_MoveDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot_Chess_MoveDocument.swift; sourceTree = "<group>"; };
-		E2928337271DDF9800D3899D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E2928338271DDF9900D3899D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E292833D271DDF9A00D3899D /* Snapshot-Chess-Move.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snapshot-Chess-Move.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2928340271DDF9A00D3899D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2928345271DDF9A00D3899D /* Snapshot-Chess-Move.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snapshot-Chess-Move.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2928347271DDF9A00D3899D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2928348271DDF9A00D3899D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E2F8EE5A2721BA4100F6E2F0 /* Snapshot-Chess-Move (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Snapshot-Chess-Move (iOS).entitlements"; sourceTree = "<group>"; };
+		E2F8EE5B2721CF1000F6E2F0 /* ChessMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessMove.swift; sourceTree = "<group>"; };
+		E2F8EE5E27223CA600F6E2F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../TestDnD4/Shared/Assets.xcassets; sourceTree = "<group>"; };
+		E2F8EE5F27223CA600F6E2F0 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		E2F8EE6027223CA600F6E2F0 /* SquareView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView1.swift; sourceTree = "<group>"; };
+		E2F8EE6127223CA600F6E2F0 /* SquareView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView2.swift; sourceTree = "<group>"; };
+		E2F8EE6227223CA600F6E2F0 /* SquareView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView3.swift; sourceTree = "<group>"; };
+		E2F8EE6327223CA600F6E2F0 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		E2F8EE7027223CE400F6E2F0 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		E2F8EE732722459000F6E2F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2F8EE762722491A00F6E2F0 /* SquareView4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +88,16 @@
 			children = (
 				E2928335271DDF9800D3899D /* Snapshot_Chess_MoveApp.swift */,
 				E2928336271DDF9800D3899D /* Snapshot_Chess_MoveDocument.swift */,
-				E2928337271DDF9800D3899D /* ContentView.swift */,
-				E2928338271DDF9900D3899D /* Assets.xcassets */,
+				E2F8EE732722459000F6E2F0 /* ContentView.swift */,
+				E2F8EE5B2721CF1000F6E2F0 /* ChessMove.swift */,
+				E2F8EE5E27223CA600F6E2F0 /* Assets.xcassets */,
+				E2F8EE5F27223CA600F6E2F0 /* EditView.swift */,
+				E2F8EE7027223CE400F6E2F0 /* BoardView.swift */,
+				E2F8EE6327223CA600F6E2F0 /* SquareView.swift */,
+				E2F8EE762722491A00F6E2F0 /* SquareView4.swift */,
+				E2F8EE6027223CA600F6E2F0 /* SquareView1.swift */,
+				E2F8EE6127223CA600F6E2F0 /* SquareView2.swift */,
+				E2F8EE6227223CA600F6E2F0 /* SquareView3.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -175,7 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E292834F271DDF9A00D3899D /* Assets.xcassets in Resources */,
+				E2F8EE6427223CA600F6E2F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2928350271DDF9A00D3899D /* Assets.xcassets in Resources */,
+				E2F8EE6527223CA600F6E2F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +227,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E292834B271DDF9A00D3899D /* Snapshot_Chess_MoveDocument.swift in Sources */,
+				E2F8EE6827223CA600F6E2F0 /* SquareView1.swift in Sources */,
+				E2F8EE6A27223CA600F6E2F0 /* SquareView2.swift in Sources */,
+				E2F8EE6C27223CA600F6E2F0 /* SquareView3.swift in Sources */,
+				E2F8EE6627223CA600F6E2F0 /* EditView.swift in Sources */,
 				E2928349271DDF9A00D3899D /* Snapshot_Chess_MoveApp.swift in Sources */,
-				E292834D271DDF9A00D3899D /* ContentView.swift in Sources */,
+				E2F8EE742722459000F6E2F0 /* ContentView.swift in Sources */,
+				E2F8EE6E27223CA600F6E2F0 /* SquareView.swift in Sources */,
+				E2F8EE7127223CE400F6E2F0 /* BoardView.swift in Sources */,
+				E2F8EE5C2721CF1000F6E2F0 /* ChessMove.swift in Sources */,
+				E2F8EE772722491A00F6E2F0 /* SquareView4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +245,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E292834C271DDF9A00D3899D /* Snapshot_Chess_MoveDocument.swift in Sources */,
+				E2F8EE6927223CA600F6E2F0 /* SquareView1.swift in Sources */,
+				E2F8EE6B27223CA600F6E2F0 /* SquareView2.swift in Sources */,
+				E2F8EE6D27223CA600F6E2F0 /* SquareView3.swift in Sources */,
+				E2F8EE6727223CA600F6E2F0 /* EditView.swift in Sources */,
 				E292834A271DDF9A00D3899D /* Snapshot_Chess_MoveApp.swift in Sources */,
-				E292834E271DDF9A00D3899D /* ContentView.swift in Sources */,
+				E2F8EE752722459000F6E2F0 /* ContentView.swift in Sources */,
+				E2F8EE6F27223CA600F6E2F0 /* SquareView.swift in Sources */,
+				E2F8EE7227223CE400F6E2F0 /* BoardView.swift in Sources */,
+				E2F8EE5D2721CF1000F6E2F0 /* ChessMove.swift in Sources */,
+				E2F8EE782722491A00F6E2F0 /* SquareView4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Snapshot-Chess-Move (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = 8VSCU6X7KN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -341,6 +389,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
@@ -349,7 +398,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thomascavalli.Snapshot-Chess-Move";
 				PRODUCT_NAME = "Snapshot-Chess-Move";
 				SDKROOT = iphoneos;
@@ -367,7 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Snapshot-Chess-Move (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = 8VSCU6X7KN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -377,6 +426,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
@@ -385,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thomascavalli.Snapshot-Chess-Move";
 				PRODUCT_NAME = "Snapshot-Chess-Move";
 				SDKROOT = iphoneos;
@@ -405,19 +455,20 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = 8VSCU6X7KN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thomascavalli.Snapshot-Chess-Move";
 				PRODUCT_NAME = "Snapshot-Chess-Move";
 				SDKROOT = macosx;
@@ -434,19 +485,20 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 100;
 				DEVELOPMENT_TEAM = 8VSCU6X7KN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.board-games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thomascavalli.Snapshot-Chess-Move";
 				PRODUCT_NAME = "Snapshot-Chess-Move";
 				SDKROOT = macosx;
