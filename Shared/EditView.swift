@@ -7,28 +7,11 @@
 
 import SwiftUI
 
-private var geometryWidth: CGFloat = -1 // undefined
-private var geometryHeight: CGFloat = -1
-private var geometryLength: CGFloat = 52 // a reasonable value to start with.
-
-
 struct EditView: View {
-    /*
-    @State private var chessBoard: [Int] =
-    [0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0
-    ,0,0,0,0,0,0,0,0]
-    @State private var greenSquare: Int = 100 //0 to 63, other#=none
-    @State private var redSquare: Int = 100
-    */
     @Binding var chessMove: ChessMove
     @Binding var isBoardView: Bool
     @Binding var document: Snapshot_Chess_MoveDocument
+    var length: CGFloat
     @State private var selected2: [Int] = [1,2,3,4,5,6] // Black KQBKRP values by piece number.
     @State private var on: Bool = true
     @State private var pieceColor: Bool = true //is black, false is white
@@ -44,14 +27,14 @@ struct EditView: View {
                 Spacer()
                 VStack {
                     Text("Chess world unite!")
-                        .frame(height: SquareSide(geometry: geometry) * 0.75, alignment: .center)
-                        .font(.system(size: SquareSide(geometry: geometry) * 0.5 ))
+                        .frame(height: length * 0.75, alignment: .center)
+                        .font(.system(size: length * 0.5 ))
                         
                     VStack(spacing: 0.0) {
                         ForEach([0,8,16,24,32,40,48,56], id: \.self) { row in
                             HStack(spacing: 0.0) {
                                 ForEach((0...7), id: \.self) { col in
-                                    SquareView(length: SquareSide(geometry: geometry), greenBoarder: $chessMove.greenSquare, redBoarder: $chessMove.redSquare , squareNumber: row + col, color: (((row / 8) + col) % 2), chessBoard: $chessMove.chessBoard, boarderColor: boarderColor)
+                                    SquareView(length: length, greenBoarder: $chessMove.greenSquare, redBoarder: $chessMove.redSquare , squareNumber: row + col, color: (((row / 8) + col) % 2), chessBoard: $chessMove.chessBoard, boarderColor: boarderColor)
                                         .onDrop(of: ["public.data"], isTargeted: $isTargetedYes) { NSItemProviders in
                                             DispatchQueue.main.async {
                                                 succeeded = true
@@ -76,16 +59,16 @@ struct EditView: View {
                         }
                     }
                     Text("")
-                        .frame(height: SquareSide(geometry: geometry) * 0.75, alignment: .center)
+                        .frame(height: length * 0.75, alignment: .center)
                     HStack(spacing: 0.0) {
-                        SquareView3(length: SquareSide(geometry: geometry), boarderColor: $boarderColor, bgColor: pieceColor)
-                        SquareView1(length: SquareSide(geometry: geometry), piecesColor: $pieceColor, BGcolor: false, selected2: $selected2)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 0, bgColor: !pieceColor)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 1, bgColor: pieceColor)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 2, bgColor: !pieceColor)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 3, bgColor: pieceColor)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 4, bgColor: !pieceColor)
-                        SquareView2(length: SquareSide(geometry: geometry), selected: $selected2, index: 5, bgColor: pieceColor)
+                        SquareView3(length: length, boarderColor: $boarderColor, bgColor: pieceColor)
+                        SquareView1(length: length, piecesColor: $pieceColor, BGcolor: false, selected2: $selected2)
+                        SquareView2(length: length, selected: $selected2, index: 0, bgColor: !pieceColor)
+                        SquareView2(length: length, selected: $selected2, index: 1, bgColor: pieceColor)
+                        SquareView2(length: length, selected: $selected2, index: 2, bgColor: !pieceColor)
+                        SquareView2(length: length, selected: $selected2, index: 3, bgColor: pieceColor)
+                        SquareView2(length: length, selected: $selected2, index: 4, bgColor: !pieceColor)
+                        SquareView2(length: length, selected: $selected2, index: 5, bgColor: pieceColor)
                     }
                     HStack {
                         Button((confirm && confirmSelection == 1) ? "Cancel" : "Clear Board") {
@@ -97,7 +80,7 @@ struct EditView: View {
                                 confirmSelection = 1
                             }
                         }
-                        .frame(height: SquareSide(geometry: geometry), alignment: .center)
+                        .frame(height: length, alignment: .center)
                         .disabled(confirm && confirmSelection != 1)
                         .padding()
                         
@@ -110,7 +93,7 @@ struct EditView: View {
                                 confirmSelection = 2
                             }
                         }
-                        .frame(height: SquareSide(geometry: geometry), alignment: .center)
+                        .frame(height: length, alignment: .center)
                         .disabled(confirm && confirmSelection != 2)
                         .padding()
                         Button("Confirm") {
@@ -141,9 +124,13 @@ struct EditView: View {
                             }
                             confirm = false
                         }
-                        .frame(height: SquareSide(geometry: geometry), alignment: .center)
+                        .frame(height: length, alignment: .center)
                         .disabled(!confirm)
                         .padding()
+                        Button("Save Board") {
+                            document.chessMoves.append(chessMove)
+                            isBoardView = true
+                        }
                     }
                 }
                 //HStack {} //next row of buttons...
@@ -169,17 +156,6 @@ func GetPiece(h: String) -> Int {
     return a
 }
 
-func SquareSide(geometry: GeometryProxy) -> CGFloat {
-    if geometryWidth != geometry.size.width || geometryHeight != geometry.size.height {
-        geometryWidth = geometry.size.width
-        geometryHeight = geometry.size.height
-        var a = geometryWidth
-        let b = geometryHeight - (geometryHeight / 9.0)
-        if a > b { a = b }
-        geometryLength = a / 11.0 //there are eleven rows on this screen
-    }
-    return geometryLength
-}
 /*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
