@@ -25,7 +25,7 @@
 //
 //  Optional List of What Changed by Who and When.
 //
-//  Created by Tom Cavalli on 9/29/21.
+//  Created by Thomas Cavalli on 9/29/21.
 //
 
 import SwiftUI
@@ -66,7 +66,13 @@ struct EditView: View {
                                                         if let e = c as? Data {
                                                             do {
                                                                 if let h = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(e) as? String {
-                                                                    chessMove.chessBoard[row + col] = GetPiece(h: h)
+                                                                    DispatchQueue.main.async {
+                                                                        chessMove.chessBoard[row + col] = GetPiece(h: h)
+                                                                        if document.chessMoves.count > 0 {
+                                                                            document.chessMoves[chessMove.index] = document.chessMoves[chessMove.index]
+                                                                        }
+                                                                    }
+                                                                    
                                                                 }
                                                             } catch {
                                                                 succeeded = false
@@ -122,7 +128,8 @@ struct EditView: View {
                         Button("Confirm") {
                             switch confirmSelection {
                             case 1:
-                                chessMove.chessBoard =      [0,0,0,0,0,0,0,0
+                                chessMove.chessBoard =
+                                                  [0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
@@ -132,7 +139,8 @@ struct EditView: View {
                                                   ,0,0,0,0,0,0,0,0]
                                 break
                             case 2:
-                                chessMove.chessBoard =      [5,4,3,2,1,3,4,5
+                                chessMove.chessBoard =
+                                                  [5,4,3,2,1,3,4,5
                                                   ,6,6,6,6,6,6,6,6
                                                   ,0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
@@ -151,8 +159,12 @@ struct EditView: View {
                         .disabled(!confirm)
                         .padding()
                         Button("Save Board") {
-                            document.chessMoves.append(chessMove)
+                            document.chessMoves[chessMove.index] = chessMove
                             isBoardView = true
+                        }
+                        Button("Copy Board") {
+                            chessMove.index = document.chessMoves.count
+                            document.chessMoves.append(chessMove)
                         }
                     }
                 }

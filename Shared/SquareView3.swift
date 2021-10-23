@@ -26,7 +26,6 @@
 //  Optional List of What Changed by Who and When.
 //
 //  Created by Thomas Cavalli on 10/12/21.
-//  Optional to add Who, When and What Changed:
 //
 
 import SwiftUI

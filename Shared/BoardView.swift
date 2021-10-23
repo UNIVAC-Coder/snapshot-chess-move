@@ -37,7 +37,7 @@ struct BoardView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("")
+                Text("\(chessMove.index)")
                     .frame(width: length * 9.0, height: 3.0, alignment: .center)
                     .background(Color("DividerColor"))
                     .padding()
