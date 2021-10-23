@@ -48,7 +48,7 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
                                                           ,0,0,0,0,0,0,0,0
                                                           ,0,0,0,0,0,0,0,0
                                                           ,0,0,0,0,0,0,0,0
-                                                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100)]
+                                                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0)]
     }
     
     init(chessMoves: [ChessMove]) {
@@ -68,7 +68,14 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
         }
         let parse = try NSKeyedUnarchiver(forReadingFrom: data)
         parse.requiresSecureCoding = true
-        self.chessMoves = parse.decodeDecodable([ChessMove].self, forKey: CodingKeys.chessmoves) ?? []
+        self.chessMoves = parse.decodeDecodable([ChessMove].self, forKey: CodingKeys.chessmoves) ?? [ChessMove(id: UUID(), chessBoard:   [0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0
+                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0)]
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {

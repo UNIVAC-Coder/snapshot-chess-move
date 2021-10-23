@@ -41,8 +41,9 @@ class ChessMove: Identifiable, Codable {
                                      ,0,0,0,0,0,0,0,0
                                      ,0,0,0,0,0,0,0,0
                                      ,0,0,0,0,0,0,0,0]
-    var greenSquare         :Int = 100
-    var redSquare           :Int = 100
+    var greenSquare        :Int = 100
+    var redSquare          :Int = 100
+    var index              :Int = 0
     
     init() {
         self.id = UUID()
@@ -56,12 +57,14 @@ class ChessMove: Identifiable, Codable {
                            ,0,0,0,0,0,0,0,0]
         self.greenSquare = 100
         self.redSquare = 100
+        self.index = 0
     }
     
-    init(id: UUID, chessBoard: [Int], greenSquare: Int, redSquare: Int) {
+    init(id: UUID, chessBoard: [Int], greenSquare: Int, redSquare: Int, index: Int) {
         self.id = id
         self.chessBoard = chessBoard
         self.greenSquare = greenSquare
         self.redSquare = redSquare
+        self.index = index
     }
 }

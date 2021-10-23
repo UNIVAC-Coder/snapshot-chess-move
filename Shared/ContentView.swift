@@ -25,7 +25,7 @@
 //
 //  Optional List of What Changed by Who and When.
 //
-//  Created by Tom Cavalli on 10/21/21.
+//  Created by Thomas Cavalli on 10/21/21.
 //
 
 import SwiftUI
@@ -37,7 +37,7 @@ private var geometryLength: CGFloat = 52 // a reasonable value to start with.
 struct ContentView: View {
     @Binding var document: Snapshot_Chess_MoveDocument
     @State private var isBoardView: Bool = true
-    @State private var theChessMove: ChessMove = ChessMove()
+    @State private var theChessMoveIndex: Int = 0
     
     var body: some View {
         GeometryReader { geometry in
@@ -49,7 +49,7 @@ struct ContentView: View {
                             ForEach(self.document.chessMoves, id: \.id) {aChessMove in
                                 BoardView(chessMove: aChessMove, length: SquareSide(geometry: geometry))
                                     .onTapGesture {
-                                        theChessMove = aChessMove
+                                        theChessMoveIndex = aChessMove.index
                                         isBoardView = false
                                     }
                                 
@@ -58,17 +58,17 @@ struct ContentView: View {
                         Spacer()
                     }
                 }else{
-                    Text("Add first chess move")
+                    Text("Tap to Add first chess move")
                         .frame(width: 200.0, height: 50.0, alignment: .center)
                         .background(Color.white)
                         .onTapGesture {
                             document.chessMoves =  [ChessMove()]
-                            theChessMove = ChessMove()
+                            theChessMoveIndex = 0
                             isBoardView = false
                         }
                 }
             }else{ //isBoardView is false
-                EditView(chessMove: $theChessMove, isBoardView: $isBoardView, document: $document, length: SquareSide(geometry: geometry))
+                EditView(chessMove: $document.chessMoves[theChessMoveIndex], isBoardView: $isBoardView, document: $document, length: SquareSide(geometry: geometry))
             }
         }
     }
