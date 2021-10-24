@@ -31,7 +31,7 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var chessMove: ChessMove
+    var chessMoveIndex: Int
     @Binding var isBoardView: Bool
     @Binding var document: Snapshot_Chess_MoveDocument
     var length: CGFloat
@@ -57,7 +57,12 @@ struct EditView: View {
                         ForEach([0,8,16,24,32,40,48,56], id: \.self) { row in
                             HStack(spacing: 0.0) {
                                 ForEach((0...7), id: \.self) { col in
-                                    SquareView(length: length, greenBoarder: $chessMove.greenSquare, redBoarder: $chessMove.redSquare , squareNumber: row + col, color: (((row / 8) + col) % 2), chessBoard: $chessMove.chessBoard, boarderColor: boarderColor)
+                                    SquareView(length: length,
+                                               greenBoarder: $document.chessMoves[chessMoveIndex].greenSquare,
+                                               redBoarder: $document.chessMoves[chessMoveIndex].redSquare,
+                                               squareNumber: row + col, color: (((row / 8) + col) % 2),
+                                               chessBoard: $document.chessMoves[chessMoveIndex].chessBoard,
+                                               boarderColor: boarderColor)
                                         .onDrop(of: ["public.data"], isTargeted: $isTargetedYes) { NSItemProviders in
                                             DispatchQueue.main.async {
                                                 succeeded = true
@@ -67,9 +72,9 @@ struct EditView: View {
                                                             do {
                                                                 if let h = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(e) as? String {
                                                                     DispatchQueue.main.async {
-                                                                        chessMove.chessBoard[row + col] = GetPiece(h: h)
+                                                                        document.chessMoves[chessMoveIndex].chessBoard[row + col] = GetPiece(h: h)
                                                                         if document.chessMoves.count > 0 {
-                                                                            document.chessMoves[chessMove.index] = document.chessMoves[chessMove.index]
+                                                                            document.chessMoves[chessMoveIndex] = document.chessMoves[chessMoveIndex]
                                                                         }
                                                                     }
                                                                     
@@ -128,7 +133,7 @@ struct EditView: View {
                         Button("Confirm") {
                             switch confirmSelection {
                             case 1:
-                                chessMove.chessBoard =
+                                document.chessMoves[chessMoveIndex].chessBoard =
                                                   [0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
                                                   ,0,0,0,0,0,0,0,0
@@ -139,7 +144,7 @@ struct EditView: View {
                                                   ,0,0,0,0,0,0,0,0]
                                 break
                             case 2:
-                                chessMove.chessBoard =
+                                document.chessMoves[chessMoveIndex].chessBoard =
                                                   [5,4,3,2,1,3,4,5
                                                   ,6,6,6,6,6,6,6,6
                                                   ,0,0,0,0,0,0,0,0
@@ -159,12 +164,12 @@ struct EditView: View {
                         .disabled(!confirm)
                         .padding()
                         Button("Save Board") {
-                            document.chessMoves[chessMove.index] = chessMove
+                            //document.chessMoves[chessMoveIndex] = chessMove
                             isBoardView = true
                         }
                         Button("Copy Board") {
-                            chessMove.index = document.chessMoves.count
-                            document.chessMoves.append(chessMove)
+                            document.chessMoves[chessMoveIndex].index = document.chessMoves.count
+                            document.chessMoves.append(ChessMove(copyBoard: document.chessMoves[chessMoveIndex]))
                         }
                     }
                 }

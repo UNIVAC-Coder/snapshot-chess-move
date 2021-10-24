@@ -33,11 +33,11 @@ import SwiftUI
 private var geometryWidth: CGFloat = -1 // undefined
 private var geometryHeight: CGFloat = -1
 private var geometryLength: CGFloat = 52 // a reasonable value to start with.
+private var theChessMoveIndex: Int = 0
 
 struct ContentView: View {
     @Binding var document: Snapshot_Chess_MoveDocument
     @State private var isBoardView: Bool = true
-    @State private var theChessMoveIndex: Int = 0
     
     var body: some View {
         GeometryReader { geometry in
@@ -68,7 +68,7 @@ struct ContentView: View {
                         }
                 }
             }else{ //isBoardView is false
-                EditView(chessMove: $document.chessMoves[theChessMoveIndex], isBoardView: $isBoardView, document: $document, length: SquareSide(geometry: geometry))
+                EditView(chessMoveIndex: theChessMoveIndex, isBoardView: $isBoardView, document: $document, length: SquareSide(geometry: geometry))
             }
         }
     }
