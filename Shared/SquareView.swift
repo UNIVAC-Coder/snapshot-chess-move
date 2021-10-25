@@ -38,6 +38,7 @@ struct SquareView: View {
     var color: Int //Background square color
     @Binding var chessBoard: [Int]
     var boarderColor: Int //0 none, 1 green, 2 red
+    @Binding var document: Snapshot_Chess_MoveDocument
     
     var body: some View {
         ZStack {
@@ -76,11 +77,13 @@ struct SquareView: View {
         case greenBoarder:
             switch boarderColor {
             case 0:
-                greenBoarder = 100
+                greenBoarder = 100 //off
+                update()
                 break
             case 2:
                 greenBoarder = 100
                 redBoarder = squareNumber
+                update()
                 break
             default:
                 break
@@ -90,10 +93,12 @@ struct SquareView: View {
             switch boarderColor {
             case 0:
                 redBoarder = 100
+                update()
                 break
             case 1:
                 redBoarder = 100
                 greenBoarder = squareNumber
+                update()
                 break
             default:
                 break
@@ -103,14 +108,21 @@ struct SquareView: View {
             switch boarderColor {
             case 1:
                 greenBoarder = squareNumber
+                update()
                 break
             case 2:
                 redBoarder = squareNumber
+                update()
                 break
             default:
                 break
             }
             break
+        }
+    }
+    func update() {
+        if document.chessMoves.count > 0 {
+            document.chessMoves[0] = document.chessMoves[0]
         }
     }
     func BoardImage(pieceName: Int) -> NSString {

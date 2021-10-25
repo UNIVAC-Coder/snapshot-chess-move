@@ -37,10 +37,14 @@ struct BoardView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("\(chessMove.index)")
+                Text("")
                     .frame(width: length * 9.0, height: 3.0, alignment: .center)
                     .background(Color("DividerColor"))
                     .padding()
+                Text("\(chessMove.index)")
+                    .frame(width: length * 9.0, height: length * 0.45, alignment: .center)
+                    .foregroundColor(Color("DividerColor"))
+                    .font(.system(size: length * 0.4))
                 Text("Chess world unite!")
                     .frame(height: length * 0.75, alignment: .center)
                     .font(.system(size: length * 0.5 ))

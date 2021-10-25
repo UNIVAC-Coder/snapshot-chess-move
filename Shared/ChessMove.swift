@@ -70,9 +70,9 @@ class ChessMove: Identifiable, Codable {
     
     init(copyBoard: ChessMove) {
         self.id = UUID()
-        self.chessBoard = copyBoard.chessBoard
-        self.greenSquare = copyBoard.greenSquare
-        self.redSquare = copyBoard.redSquare
-        self.index = copyBoard.index
+        self.chessBoard = Array(copyBoard.chessBoard)
+        self.greenSquare = Int(copyBoard.greenSquare)
+        self.redSquare = Int(copyBoard.redSquare)
+        self.index = Int(copyBoard.index)
     }
 }
