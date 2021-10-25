@@ -68,7 +68,7 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
         }
         let parse = try NSKeyedUnarchiver(forReadingFrom: data)
         parse.requiresSecureCoding = true
-        self.chessMoves = parse.decodeDecodable([ChessMove].self, forKey: CodingKeys.chessmoves) ?? [ChessMove(id: UUID(), chessBoard:   [0,0,0,0,0,0,0,0
+        self.chessMoves = parse.decodeDecodable([ChessMove].self, forKey: CodingKeys.chessmoves) ?? [ChessMove(id: UUID(), chessBoard:                    [0,0,0,0,0,0,0,0
                           ,0,0,0,0,0,0,0,0
                           ,0,0,0,0,0,0,0,0
                           ,0,0,0,0,0,0,0,0
