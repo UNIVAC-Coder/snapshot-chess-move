@@ -45,10 +45,9 @@ struct BoardView: View {
                     .frame(width: length * 9.0, height: length * 0.45, alignment: .center)
                     .foregroundColor(Color("DividerColor"))
                     .font(.system(size: length * 0.4))
-                Text("Chess world unite!")
+                Text(chessMove.header)
                     .frame(height: length * 0.75, alignment: .center)
                     .font(.system(size: length * 0.5 ))
-                    
                 VStack(spacing: 0.0) {
                     ForEach([0,8,16,24,32,40,48,56], id: \.self) { row in
                         HStack(spacing: 0.0) {
