@@ -48,7 +48,7 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
                                                           ,0,0,0,0,0,0,0,0
                                                           ,0,0,0,0,0,0,0,0
                                                           ,0,0,0,0,0,0,0,0
-                                                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0)]
+                                                           ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0, header: "A Snapshot Chess Move", footer: "Comment.")]
     }
     
     init(chessMoves: [ChessMove]) {
@@ -75,7 +75,7 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
                           ,0,0,0,0,0,0,0,0
                           ,0,0,0,0,0,0,0,0
                           ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0)]
+                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0, header: "A Snapshot Chess Move", footer: "Comment.")]
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {

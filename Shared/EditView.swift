@@ -54,10 +54,11 @@ struct EditView: View {
                         .frame(height: length * 0.7, alignment: .center)
                         .font(.system(size: length * 0.5))
                         .foregroundColor(Color("DividerColor"))
-                    Text("Chess world unite!")
+                    TextEditor(text: $chessMove.header)
                         .frame(height: length * 0.75, alignment: .center)
-                        .font(.system(size: length * 0.5 ))
-                        
+                        .font(.system(size: length * 0.35 ))
+                        .foregroundColor(Color("DividerColor"))
+                        .multilineTextAlignment(.center)
                     VStack(spacing: 0.0) {
                         ForEach([0,8,16,24,32,40,48,56], id: \.self) { row in
                             HStack(spacing: 0.0) {
@@ -101,6 +102,11 @@ struct EditView: View {
                         }
                     }
                     .padding()
+                    TextEditor(text: $chessMove.footer)
+                        .frame(height: length * 3.0, alignment: .center)
+                        .font(.system(size: length * 0.35 ))
+                        .foregroundColor(Color("DividerColor"))
+                        .multilineTextAlignment(.center)
                     //Text("")
                     //    .frame(height: length * 0.75, alignment: .center)
                     HStack(spacing: 0.0) {
@@ -151,7 +157,7 @@ struct EditView: View {
                                 message = "Discard Changes?"
                             }
                         }
-                        .disabled(confirm)
+                        .disabled(confirm && confirmSelection != 3)
                         Button("Confirm") {
                             switch confirmSelection {
                             case 1:
@@ -213,9 +219,6 @@ struct EditView: View {
                 Spacer()
             }
         }
-    }
-    func greenie(row: Int, col: Int) -> Bool {
-        return chessMove.greenSquare == row + col
     }
 }
 func GetPiece(h: String) -> Int {

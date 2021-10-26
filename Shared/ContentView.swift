@@ -80,7 +80,7 @@ struct ContentView: View {
             var a = geometryWidth
             let b = geometryHeight - (geometryHeight / 9.0)
             if a > b { a = b }
-            geometryLength = a / 11.0 //there are eleven rows on this screen
+            geometryLength = a / 15.0 //there are eleven rows on this screen
         }
         return geometryLength
     }
