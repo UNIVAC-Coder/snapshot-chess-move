@@ -1,30 +1,13 @@
 //
 //  ContentView.swift
 //  Shared
-//  MIT License
+//  Creative Commons Attribution 4.0 International Public License
+//  Creative Commons may be contacted at creativecommons.org.
 //
 //  Copyright (c) 2021 Thomas Cavalli
+//  Thomas Cavalli may be contacted at thomascavalli.com
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
-//
-//  Optional List of What Changed by Who and When.
-//
+//  List of What Changed (by Who and When):
 //  Created by Thomas Cavalli on 9/29/21.
 //
 
@@ -132,12 +115,12 @@ struct EditView: View {
                         }
                         .frame(height: length, alignment: .center)
                         .disabled(confirm && confirmSelection != 1)
-                        .padding()
                         
                         Button((confirm && confirmSelection == 2) ? "Cancel" : "Setup Board") {
                             if confirm {
                                 confirm = false
                                 confirmSelection = 0
+           
                             }else{
                                 confirm = true
                                 confirmSelection = 2
@@ -146,7 +129,7 @@ struct EditView: View {
                         }
                         .frame(height: length, alignment: .center)
                         .disabled(confirm && confirmSelection != 2)
-                        .padding()
+                        
                         Button((confirm && confirmSelection == 3) ? "Keep Changes" : "Cancel Changes") {
                             if confirm {
                                 confirm = false
@@ -158,6 +141,8 @@ struct EditView: View {
                             }
                         }
                         .disabled(confirm && confirmSelection != 3)
+                    }
+                    HStack {
                         Button("Confirm") {
                             switch confirmSelection {
                             case 1:
@@ -194,7 +179,6 @@ struct EditView: View {
                         }
                         .frame(height: length, alignment: .center)
                         .disabled(!confirm)
-                        .padding()
                         Button("Save Board") {
                             if chessMove.index == document.chessMoves.count {
                                 document.chessMoves.append(ChessMove(copyBoard: chessMove))
