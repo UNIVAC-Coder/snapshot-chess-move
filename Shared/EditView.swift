@@ -39,8 +39,9 @@ struct EditView: View {
                         .foregroundColor(Color("DividerColor"))
                     TextEditor(text: $chessMove.header)
                         .frame(height: length * 0.75, alignment: .center)
-                        .font(.system(size: length * 0.35 ))
+                        .font(.system(size: length * 0.5 ))
                         .foregroundColor(Color("DividerColor"))
+                        .background(Color("BGColor"))
                         .multilineTextAlignment(.center)
                     VStack(spacing: 0.0) {
                         ForEach([0,8,16,24,32,40,48,56], id: \.self) { row in
@@ -87,11 +88,10 @@ struct EditView: View {
                     .padding()
                     TextEditor(text: $chessMove.footer)
                         .frame(height: length * 3.0, alignment: .center)
-                        .font(.system(size: length * 0.35 ))
+                        .font(.system(size: length * 0.5 ))
                         .foregroundColor(Color("DividerColor"))
+                        .background(Color("BGColor"))
                         .multilineTextAlignment(.center)
-                    //Text("")
-                    //    .frame(height: length * 0.75, alignment: .center)
                     HStack(spacing: 0.0) {
                         SquareView3(length: length, boarderColor: $boarderColor, bgColor: pieceColor)
                         SquareView1(length: length, piecesColor: $pieceColor, BGcolor: false, selected2: $selected2)

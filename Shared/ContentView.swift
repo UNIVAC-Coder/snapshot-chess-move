@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-private var geometryWidth: CGFloat = -1 // undefined
+private var geometryWidth:  CGFloat = -1 // is undefined
 private var geometryHeight: CGFloat = -1
 private var geometryLength: CGFloat = 52 // a reasonable value to start with.
 
@@ -68,7 +68,7 @@ struct ContentView: View {
         return geometryLength
     }
 }
-/*
+/* 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
