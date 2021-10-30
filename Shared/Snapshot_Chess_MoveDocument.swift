@@ -39,33 +39,20 @@ struct Snapshot_Chess_MoveDocument: FileDocument {
     }
     
     static var readableContentTypes: [UTType] { [.snapshotChessMove] }
-    
-    struct CodingKeys {
-        static let chessmoves = "ChessMovesArray"
-    }
 
     init(configuration: ReadConfiguration) throws {
         guard let data = configuration.file.regularFileContents
         else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        let parse = try NSKeyedUnarchiver(forReadingFrom: data)
-        parse.requiresSecureCoding = true
-        self.chessMoves = parse.decodeDecodable([ChessMove].self, forKey: CodingKeys.chessmoves) ?? [ChessMove(id: UUID(), chessBoard:                    [0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0
-                          ,0,0,0,0,0,0,0,0], greenSquare: 100, redSquare: 100, index: 0, header: "A Snapshot Chess Move", footer: "Comment.")]
-    }
-    
+        self.chessMoves = try JSONDecoder().decode([ChessMove].self, from: data)
+         }
+         
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let abc = NSKeyedArchiver(requiringSecureCoding: true)
-        try abc.encodeEncodable(self.chessMoves, forKey: CodingKeys.chessmoves)
-        abc.finishEncoding()
-        return FileWrapper(regularFileWithContents: abc.encodedData)
+        if let jsonData =  try? JSONEncoder().encode(chessMoves) {
+            return FileWrapper(regularFileWithContents: jsonData)
+        }
+        throw CocoaError(.coderInvalidValue)
     }
     
 }
